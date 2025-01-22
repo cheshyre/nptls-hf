@@ -46,8 +46,8 @@ def check_problem_2_3(get_intrinsic_hamiltonian_for_he4_from_basis_and_hw):
             h1_you, h2_you = get_intrinsic_hamiltonian_for_he4_from_basis_and_hw(basis, hw)
             h1_me, h2_me = prob_2_3_ref_impl(basis, hw)
 
-            norm_diff_1b = np.sum(np.pow(h1_you - h1_me, 2))
-            norm_diff_2b = np.sum(np.pow(h2_you - h2_me, 2))
+            norm_diff_1b = np.sum(np.power(h1_you - h1_me, 2))
+            norm_diff_2b = np.sum(np.power(h2_you - h2_me, 2))
 
             if norm_diff_1b > 1e-6:
                 print("For emax = {}, hw = {}".format(emax, hw))
