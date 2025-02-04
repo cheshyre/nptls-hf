@@ -170,5 +170,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# Mac files.
+# Large data files that must be unzipped
+data/emax_8/*.mmh
+
+# Mac files
 .DS_Store

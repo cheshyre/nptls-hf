@@ -20,14 +20,18 @@ jupyter notebook
 from the current directory (*not the `exercises` directory).
 This should open their web browser, where students can navigate to the `exercises` directory and see the notebooks for the various exercises.
 
+## Larger runs
+
+For runs with emax larger than 4, one needs to take advantage of the symmetries of the HF calculation, which make the problem very sparse. A helper class `HFHelper` is provided to allow you to compute energy expectation values and Fock matrices for up to `emax=8`. An example of how to use this class is given in [`large_scale_hf_example.py`](large_scale_hf_example.py).
+
 ## Data
 
-For larger problems, the data we require is too large to store on Github. We provide this large data as a TODO GB zip file [here](). Students should move `big_data.zip` into `data/` and then uncompress it before starting the indicated exercises.
+For larger problems, the data we require is too large to store on Github without compression. All of the matrix elements in `data/emax_8` are stored as zipped files. Before trying to run calculations using `HFHelper`, please unzip all files in `data/emax_8` (this will use a total of 6.1 GB):
 
 ```
-cd data/
-unzip big_data.zip
-cd ..
+cd data/emax_8/
+for f in *.mmh.zip; do unzip $f; done
+cd ../..
 ```
 
 ## Contact
